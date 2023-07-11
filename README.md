@@ -1,47 +1,32 @@
-# Astro Starter Kit: Minimal
+# Reproduction for astro-icon type generation
 
-```
-npm create astro@latest -- --template minimal
-```
+This is a reproduction for the issue described here: https://github.com/natemoo-re/astro-icon/issues/126. We are only using a local collection here, and only with one icon, which is used in `src/pages/index.astro`.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+When running `astro dev`, `.astro/icon.d.ts` gets generated like so:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```ts
+declare module 'astro-icon' {
+    export type Icon =
+		| "test";
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+  }
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+However, if we run `astro check` (stopping `astro dev` first might make this more obvious - I'm not sure if there's a race condition otherwise), the file gets generated incorrectly:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```ts
+declare module 'astro-icon' {
+    export type Icon = never;
 
-Any static assets, like images, can be placed in the `public/` directory.
+  }
+```
 
-## 🧞 Commands
+And because the type gets generated as `never`, `astro check` results in an error:
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+src/pages/index.astro:15:11 Error: Type 'string' is not assignable to type 'never'.
+14    <h1>Astro</h1>
+15      <Icon name="test" />
+              ~~~~
+16   </body>
+```
