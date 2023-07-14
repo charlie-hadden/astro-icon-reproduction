@@ -2,7 +2,7 @@ lockfileVersion: '6.0'
 
 patchedDependencies:
   astro-icon@1.0.0-next.2:
-    hash: wjwdlwkqpcj2kod7cr3adydkxa
+    hash: bf2ra7eaarvd46xajra2av3aiu
     path: patches/astro-icon@1.0.0-next.2.patch
 
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
     version: 2.8.1
   astro-icon:
     specifier: 1.0.0-next.2
-    version: 1.0.0-next.2(patch_hash=wjwdlwkqpcj2kod7cr3adydkxa)
+    version: 1.0.0-next.2(patch_hash=bf2ra7eaarvd46xajra2av3aiu)
 
 devDependencies:
   typescript:
@@ -1059,7 +1059,7 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro-icon@1.0.0-next.2(patch_hash=wjwdlwkqpcj2kod7cr3adydkxa):
+  /astro-icon@1.0.0-next.2(patch_hash=bf2ra7eaarvd46xajra2av3aiu):
     resolution: {integrity: sha512-LruCSCnTX16w5p8G+afyRqL8i4SKDVbaEvs7d5wudahum+7pibuFDp//LvKL+QBTLctEzoS/o0387yuOAKli6A==}
     dependencies:
       '@iconify/tools': 3.0.2
