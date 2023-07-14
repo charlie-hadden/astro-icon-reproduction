@@ -1,12 +1,17 @@
 lockfileVersion: '6.0'
 
+patchedDependencies:
+  astro-icon@1.0.0-next.2:
+    hash: wjwdlwkqpcj2kod7cr3adydkxa
+    path: patches/astro-icon@1.0.0-next.2.patch
+
 dependencies:
   astro:
     specifier: ^2.8.1
     version: 2.8.1
   astro-icon:
     specifier: 1.0.0-next.2
-    version: 1.0.0-next.2
+    version: 1.0.0-next.2(patch_hash=wjwdlwkqpcj2kod7cr3adydkxa)
 
 devDependencies:
   typescript:
@@ -899,7 +904,7 @@ packages:
   /@types/cheerio@0.22.31:
     resolution: {integrity: sha512-Kt7Cdjjdi2XWSfrZ53v4Of0wG3ZcmaegFXjMmz9tfNrZSkzzo36G0AL1YqSdcIA78Etjt6E609pt5h1xnQkPUw==}
     dependencies:
-      '@types/node': 20.4.1
+      '@types/node': 12.20.55
     dev: false
 
   /@types/debug@4.1.8:
@@ -934,8 +939,8 @@ packages:
       '@types/unist': 3.0.0
     dev: false
 
-  /@types/node@20.4.1:
-    resolution: {integrity: sha512-JIzsAvJeA/5iY6Y/OxZbv1lUcc8dNSE77lb2gnBH+/PJ3lFR1Ccvgwl5JWnHAkNHcRsT0TbpVOsiMKZ1F/yyJg==}
+  /@types/node@12.20.55:
+    resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: false
 
   /@types/parse5@6.0.3:
@@ -949,7 +954,7 @@ packages:
   /@types/tar@6.1.5:
     resolution: {integrity: sha512-qm2I/RlZij5RofuY7vohTpYNaYcrSQlN2MyjucQc7ZweDwaEWkdN/EeNh6e9zjK6uEm6PwjdMXkcj05BxZdX1Q==}
     dependencies:
-      '@types/node': 20.4.1
+      '@types/node': 12.20.55
       minipass: 4.2.8
     dev: false
 
@@ -969,7 +974,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.4.1
+      '@types/node': 12.20.55
     dev: false
     optional: true
 
@@ -1054,7 +1059,7 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro-icon@1.0.0-next.2:
+  /astro-icon@1.0.0-next.2(patch_hash=wjwdlwkqpcj2kod7cr3adydkxa):
     resolution: {integrity: sha512-LruCSCnTX16w5p8G+afyRqL8i4SKDVbaEvs7d5wudahum+7pibuFDp//LvKL+QBTLctEzoS/o0387yuOAKli6A==}
     dependencies:
       '@iconify/tools': 3.0.2
@@ -1063,6 +1068,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
+    patched: true
 
   /astro@2.8.1:
     resolution: {integrity: sha512-qHG9bw/eidVKs3wc4shOlK4zuX2SaXDGWfbDLoJIISlQuEDD09LIXv8K39O7lLRSMFRgjfv0QYXP3g05VtOBzg==}

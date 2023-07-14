@@ -15,5 +15,10 @@
   },
   "devDependencies": {
     "typescript": "^5.1.6"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "astro-icon@1.0.0-next.2": "patches/astro-icon@1.0.0-next.2.patch"
+    }
   }
 }
